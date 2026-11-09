@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Configuración de NetBeans: indica la clase principal para Run (F6) y Debug (Ctrl+F5). -->
+<!-- Configuración de NetBeans: indica la clase principal para Run (F6) y Debug (Ctrl+F5).
+     Las opciones -Dstdout.encoding=UTF-8 hacen que las tildes se vean bien en la ventana Output. -->
 <actions>
     <action>
         <actionName>run</actionName>
@@ -11,7 +12,7 @@
             <goal>org.codehaus.mojo:exec-maven-plugin:3.6.3:exec</goal>
         </goals>
         <properties>
-            <exec.vmArgs></exec.vmArgs>
+            <exec.vmArgs>-Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8</exec.vmArgs>
             <exec.args>${exec.vmArgs} -classpath %classpath ${exec.mainClass} ${exec.appArgs}</exec.args>
             <exec.appArgs></exec.appArgs>
             <exec.mainClass>com.redsegura.RedSeguraApplication</exec.mainClass>
@@ -28,7 +29,7 @@
             <goal>org.codehaus.mojo:exec-maven-plugin:3.6.3:exec</goal>
         </goals>
         <properties>
-            <exec.vmArgs>-agentlib:jdwp=transport=dt_socket,server=n,address=${jpda.address}</exec.vmArgs>
+            <exec.vmArgs>-Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 -agentlib:jdwp=transport=dt_socket,server=n,address=${jpda.address}</exec.vmArgs>
             <exec.args>${exec.vmArgs} -classpath %classpath ${exec.mainClass} ${exec.appArgs}</exec.args>
             <exec.appArgs></exec.appArgs>
             <exec.mainClass>com.redsegura.RedSeguraApplication</exec.mainClass>
